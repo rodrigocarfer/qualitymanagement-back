@@ -1,12 +1,5 @@
 pool:
   name: Azure Pipelines
-#Your build pipeline references an undefined variable named ‘Parameters.RestoreBuildProjects’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
-#Your build pipeline references an undefined variable named ‘Parameters.RestoreBuildProjects’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
-#Your build pipeline references the ‘BuildConfiguration’ variable, which you’ve selected to be settable at queue time. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab, and then select the option to make it settable at queue time. See https://go.microsoft.com/fwlink/?linkid=865971
-#Your build pipeline references an undefined variable named ‘Parameters.TestProjects’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
-#Your build pipeline references the ‘BuildConfiguration’ variable, which you’ve selected to be settable at queue time. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab, and then select the option to make it settable at queue time. See https://go.microsoft.com/fwlink/?linkid=865971
-#Your build pipeline references the ‘BuildConfiguration’ variable, which you’ve selected to be settable at queue time. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab, and then select the option to make it settable at queue time. See https://go.microsoft.com/fwlink/?linkid=865971
-
 steps:
 - task: DotNetCoreCLI@2
   displayName: Restore
@@ -21,13 +14,6 @@ steps:
     arguments: '--configuration $(BuildConfiguration)'
 
 - task: DotNetCoreCLI@2
-  displayName: Test
-  inputs:
-    command: test
-    projects: '$(Parameters.TestProjects)'
-    arguments: '--configuration $(BuildConfiguration)'
-
-- task: DotNetCoreCLI@2
   displayName: Publish
   inputs:
     command: publish
@@ -38,20 +24,20 @@ steps:
 - task: Docker@1
   displayName: 'Build an image'
   inputs:
-    azureSubscriptionEndpoint: 'VLI - Producao (4374b64f-e669-45c3-9ab9-164b04e5bdf0)'
-    azureContainerRegistry: vliazuctrarqcorp.azurecr.io
+    azureSubscriptionEndpoint: 'Avaliação Gratuita (063b63e1-2ff5-4341-924f-21ef878aa7a5)'
+    azureContainerRegistry: gestaoqualidade.azurecr.io
     dockerFile: Dockerfile
-    imageName: 'daasapi:$(Build.BuildId)'
+    imageName: 'gestaoqualidade:$(Build.BuildId)'
     useDefaultContext: false
-    buildContext: '$(build.artifactstagingdirectory)/VLI.Analytics.API'
+    buildContext: '$(build.artifactstagingdirectory)/gestaoqualidade.API'
 
 - task: Docker@1
   displayName: 'Push an image'
   inputs:
-    azureSubscriptionEndpoint: 'VLI - Producao (4374b64f-e669-45c3-9ab9-164b04e5bdf0)'
-    azureContainerRegistry: vliazuctrarqcorp.azurecr.io
+    azureSubscriptionEndpoint: 'Avaliação Gratuita (063b63e1-2ff5-4341-924f-21ef878aa7a5)'
+    azureContainerRegistry: gestaoqualidade.azurecr.io
     command: 'Push an image'
-    imageName: 'daasapi:$(Build.BuildId)'
+    imageName: 'gestaoqualidade:$(Build.BuildId)'
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact'
