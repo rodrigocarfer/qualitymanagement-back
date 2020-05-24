@@ -23,6 +23,12 @@ namespace gestaoqualidade.API.Controllers
             _logger = logger;
         }
 
+        [HttpGet("ok")]
+        public string GetOK()
+        {
+            return "OK";
+        }
+
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {

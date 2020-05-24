@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dell\\source\\repos\\gestaoqualidade.API\\gestaoqualidade.API.csproj": {}
+    "C:\\Users\\Dell\\Google Drive\\gestaoqualidade.API\\qualitymanagement-back\\gestaoqualidade.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dell\\source\\repos\\gestaoqualidade.API\\gestaoqualidade.API.csproj": {
+    "C:\\Users\\Dell\\Google Drive\\gestaoqualidade.API\\qualitymanagement-back\\gestaoqualidade.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\source\\repos\\gestaoqualidade.API\\gestaoqualidade.API.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\Google Drive\\gestaoqualidade.API\\qualitymanagement-back\\gestaoqualidade.API.csproj",
         "projectName": "gestaoqualidade.API",
-        "projectPath": "C:\\Users\\Dell\\source\\repos\\gestaoqualidade.API\\gestaoqualidade.API.csproj",
+        "projectPath": "C:\\Users\\Dell\\Google Drive\\gestaoqualidade.API\\qualitymanagement-back\\gestaoqualidade.API.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\source\\repos\\gestaoqualidade.API\\obj\\",
+        "outputPath": "C:\\Users\\Dell\\Google Drive\\gestaoqualidade.API\\qualitymanagement-back\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
