@@ -1,0 +1,11 @@
+steps:
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'gestaoqualidade'
+    repository: 'gestaoqualidade-api'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+    tags: |
+      $(Build.BuildId)
+      latest
