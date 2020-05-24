@@ -1,40 +1,11 @@
 steps:
 
-- task: DotNetCoreCLI@2
-  displayName: Build
+- task: Docker@2
   inputs:
-    projects: '$(Parameters.RestoreBuildProjects)'
-    arguments: '--configuration $(BuildConfiguration)'
-
-- task: DotNetCoreCLI@2
-  displayName: Publish
-  inputs:
-    command: publish
-    publishWebProjects: True
-    arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
-    zipAfterPublish: false
-
-- task: Docker@1
-  displayName: 'Build an image'
-  inputs:
-    azureSubscriptionEndpoint: 'Avaliação Gratuita (063b63e1-2ff5-4341-924f-21ef878aa7a5)'
-    azureContainerRegistry: gestaoqualidade.azurecr.io
-    dockerFile: Dockerfile
-    imageName: 'gestaoqualidade:$(Build.BuildId)'
-    useDefaultContext: false
-    buildContext: '$(build.artifactstagingdirectory)/gestaoqualidade.API'
-
-- task: Docker@1
-  displayName: 'Push an image'
-  inputs:
-    azureSubscriptionEndpoint: 'Avaliação Gratuita (063b63e1-2ff5-4341-924f-21ef878aa7a5)'
-    azureContainerRegistry: gestaoqualidade.azurecr.io
-    command: 'Push an image'
-    imageName: 'gestaoqualidade:$(Build.BuildId)'
-
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact'
-  inputs:
-    PathtoPublish: '$(build.artifactstagingdirectory)'
-  condition: succeededOrFailed()
-
+    containerRegistry: 'gestaoqualidade'
+    repository: 'gestaoqualidade-api'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+    tags: |
+      $(Build.BuildId)
+      latest
