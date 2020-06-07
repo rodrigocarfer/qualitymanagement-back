@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualityManagement.Business"
 		{0F366A5E-09EA-4424-89C6-3018E94AFC4F} = {0F366A5E-09EA-4424-89C6-3018E94AFC4F}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualityManagement.Frontier.Repository", "QualityManagement.Frontier\QualityManagement.Frontier.Repository.csproj", "{539CC828-4725-4965-9BEC-8E0C5EE51334}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualityManagement.Frontier.Repository", "QualityManagement.Frontier.Repository\QualityManagement.Frontier.Repository.csproj", "{539CC828-4725-4965-9BEC-8E0C5EE51334}"
 	ProjectSection(ProjectDependencies) = postProject
 		{0F366A5E-09EA-4424-89C6-3018E94AFC4F} = {0F366A5E-09EA-4424-89C6-3018E94AFC4F}
 	EndProjectSection

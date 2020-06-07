@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\QualityManagement.Frontier\QualityManagement.Frontier.Repository.csproj" />
+    <ProjectReference Include="..\QualityManagement.Frontier.Repository\QualityManagement.Frontier.Repository.csproj" />
     <ProjectReference Include="..\QualityManagement.Util\QualityManagement.Util.csproj" />
   </ItemGroup>
 

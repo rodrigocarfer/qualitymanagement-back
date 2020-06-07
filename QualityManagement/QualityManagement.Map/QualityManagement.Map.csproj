@@ -13,7 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\QualityManagement.Business\QualityManagement.Business.csproj" />
     <ProjectReference Include="..\QualityManagement.Frontier.Business\QualityManagement.Frontier.Business.csproj" />
-    <ProjectReference Include="..\QualityManagement.Frontier\QualityManagement.Frontier.Repository.csproj" />
+    <ProjectReference Include="..\QualityManagement.Frontier.Repository\QualityManagement.Frontier.Repository.csproj" />
     <ProjectReference Include="..\QualityManagement.Repository\QualityManagement.Repository.csproj" />
     <ProjectReference Include="..\QualityManagement.Service\QualityManagement.Service.csproj" />
     <ProjectReference Include="..\QualityManagement.Util\QualityManagement.Util.csproj" />
