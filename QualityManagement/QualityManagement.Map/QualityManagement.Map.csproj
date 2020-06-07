@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+	<DebugType>Full</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\QualityManagement.Business\QualityManagement.Business.csproj" />
+    <ProjectReference Include="..\QualityManagement.Frontier.Business\QualityManagement.Frontier.Business.csproj" />
+    <ProjectReference Include="..\QualityManagement.Frontier\QualityManagement.Frontier.Repository.csproj" />
+    <ProjectReference Include="..\QualityManagement.Repository\QualityManagement.Repository.csproj" />
+    <ProjectReference Include="..\QualityManagement.Service\QualityManagement.Service.csproj" />
+    <ProjectReference Include="..\QualityManagement.Util\QualityManagement.Util.csproj" />
+  </ItemGroup>
+
+</Project>

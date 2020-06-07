@@ -1,0 +1,27 @@
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.0-buster-slim AS base
+WORKDIR /src
+EXPOSE 80
+EXPOSE 443
+
+FROM mcr.microsoft.com/dotnet/core/sdk:3.0-buster AS build
+WORKDIR /src
+
+COPY ["QualityManagement.API/QualityManagement.API.csproj", "QualityManagement.API/"]
+COPY ["QualityManagement.Business/QualityManagement.Business.csproj", "QualityManagement.Business/"]
+COPY ["QualityManagement.Frontier/QualityManagement.Frontier.csproj", "QualityManagement.Frontier/"]
+COPY ["QualityManagement.Map/QualityManagement.Map.csproj", "QualityManagement.Map/"]
+COPY ["QualityManagement.Repository/QualityManagement.Repository.csproj", "QualityManagement.Repository/"]
+COPY ["QualityManagement.Util/QualityManagement.Util.csproj", "QualityManagement.Util/"]
+
+RUN dotnet restore "QualityManagement.API/QualityManagement.API.csproj"
+COPY . .
+WORKDIR "/src/QualityManagement.API"
+RUN dotnet build "QualityManagement.API.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "QualityManagement.API.csproj" -c Release -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "QualityManagement.API.dll"]

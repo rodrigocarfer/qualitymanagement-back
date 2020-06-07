@@ -1,0 +1,89 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualityManagement.API", "QualityManagement.API\QualityManagement.API.csproj", "{A19466CB-7F94-49A3-82E1-627FC38FEFE3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{07724F19-3FAB-4663-AC2A-0A365DB027A7} = {07724F19-3FAB-4663-AC2A-0A365DB027A7}
+		{539CC828-4725-4965-9BEC-8E0C5EE51334} = {539CC828-4725-4965-9BEC-8E0C5EE51334}
+		{E5A74E3B-3024-4B6D-BA54-36409F737501} = {E5A74E3B-3024-4B6D-BA54-36409F737501}
+		{0F366A5E-09EA-4424-89C6-3018E94AFC4F} = {0F366A5E-09EA-4424-89C6-3018E94AFC4F}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualityManagement.Business", "QualityManagement.Business\QualityManagement.Business.csproj", "{07724F19-3FAB-4663-AC2A-0A365DB027A7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{539CC828-4725-4965-9BEC-8E0C5EE51334} = {539CC828-4725-4965-9BEC-8E0C5EE51334}
+		{0F366A5E-09EA-4424-89C6-3018E94AFC4F} = {0F366A5E-09EA-4424-89C6-3018E94AFC4F}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualityManagement.Frontier.Repository", "QualityManagement.Frontier\QualityManagement.Frontier.Repository.csproj", "{539CC828-4725-4965-9BEC-8E0C5EE51334}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0F366A5E-09EA-4424-89C6-3018E94AFC4F} = {0F366A5E-09EA-4424-89C6-3018E94AFC4F}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualityManagement.Service", "QualityManagement.Service\QualityManagement.Service.csproj", "{E5A74E3B-3024-4B6D-BA54-36409F737501}"
+	ProjectSection(ProjectDependencies) = postProject
+		{07724F19-3FAB-4663-AC2A-0A365DB027A7} = {07724F19-3FAB-4663-AC2A-0A365DB027A7}
+		{539CC828-4725-4965-9BEC-8E0C5EE51334} = {539CC828-4725-4965-9BEC-8E0C5EE51334}
+		{0796DA7C-8C11-48E0-B44A-D61577CC3BE0} = {0796DA7C-8C11-48E0-B44A-D61577CC3BE0}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualityManagement.Repository", "QualityManagement.Repository\QualityManagement.Repository.csproj", "{0796DA7C-8C11-48E0-B44A-D61577CC3BE0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{539CC828-4725-4965-9BEC-8E0C5EE51334} = {539CC828-4725-4965-9BEC-8E0C5EE51334}
+		{0F366A5E-09EA-4424-89C6-3018E94AFC4F} = {0F366A5E-09EA-4424-89C6-3018E94AFC4F}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualityManagement.Util", "QualityManagement.Util\QualityManagement.Util.csproj", "{0F366A5E-09EA-4424-89C6-3018E94AFC4F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualityManagement.Frontier.Business", "QualityManagement.Frontier.Business\QualityManagement.Frontier.Business.csproj", "{10360F3A-57EB-465D-9829-10C6832AD4C0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualityManagement.Map", "QualityManagement.Map\QualityManagement.Map.csproj", "{9FC10B42-59A8-472E-83E9-3C662576C2F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A19466CB-7F94-49A3-82E1-627FC38FEFE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A19466CB-7F94-49A3-82E1-627FC38FEFE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A19466CB-7F94-49A3-82E1-627FC38FEFE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A19466CB-7F94-49A3-82E1-627FC38FEFE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07724F19-3FAB-4663-AC2A-0A365DB027A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07724F19-3FAB-4663-AC2A-0A365DB027A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07724F19-3FAB-4663-AC2A-0A365DB027A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07724F19-3FAB-4663-AC2A-0A365DB027A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{539CC828-4725-4965-9BEC-8E0C5EE51334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{539CC828-4725-4965-9BEC-8E0C5EE51334}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{539CC828-4725-4965-9BEC-8E0C5EE51334}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{539CC828-4725-4965-9BEC-8E0C5EE51334}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5A74E3B-3024-4B6D-BA54-36409F737501}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5A74E3B-3024-4B6D-BA54-36409F737501}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5A74E3B-3024-4B6D-BA54-36409F737501}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5A74E3B-3024-4B6D-BA54-36409F737501}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0796DA7C-8C11-48E0-B44A-D61577CC3BE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0796DA7C-8C11-48E0-B44A-D61577CC3BE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0796DA7C-8C11-48E0-B44A-D61577CC3BE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0796DA7C-8C11-48E0-B44A-D61577CC3BE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F366A5E-09EA-4424-89C6-3018E94AFC4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F366A5E-09EA-4424-89C6-3018E94AFC4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F366A5E-09EA-4424-89C6-3018E94AFC4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F366A5E-09EA-4424-89C6-3018E94AFC4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10360F3A-57EB-465D-9829-10C6832AD4C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10360F3A-57EB-465D-9829-10C6832AD4C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10360F3A-57EB-465D-9829-10C6832AD4C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10360F3A-57EB-465D-9829-10C6832AD4C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FC10B42-59A8-472E-83E9-3C662576C2F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FC10B42-59A8-472E-83E9-3C662576C2F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FC10B42-59A8-472E-83E9-3C662576C2F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FC10B42-59A8-472E-83E9-3C662576C2F7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7978DB5B-B556-4F1B-BECE-385C7BC4F536}
+	EndGlobalSection
+EndGlobal

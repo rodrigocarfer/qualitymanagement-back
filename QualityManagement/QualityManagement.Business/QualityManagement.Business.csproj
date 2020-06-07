@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <DebugType>Full</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\QualityManagement.Frontier.Business\QualityManagement.Frontier.Business.csproj" />
+    <ProjectReference Include="..\QualityManagement.Util\QualityManagement.Util.csproj" />
+  </ItemGroup>
+
+</Project>
