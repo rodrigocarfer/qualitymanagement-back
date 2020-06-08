@@ -23,6 +23,16 @@ namespace QualityManagement.Repository.Dominio
              @descricao_ocorrencia) 
         ";
 
+        private const string SELECT_OBTER_REGISTROS_RECENTES = @"
+           SELECT TOP 10 data_inclusao         AS DataInclusao, 
+              data_ocorrencia       AS DataOcorrencia, 
+              descricao_ocorrencia  AS DescricaoOcorrencia, 
+              prioridade_ocorrencia AS PrioridadeOcorrencia, 
+              tipo_ocorrencia       AS TipoOcorrencia, 
+              titulo_ocorrencia     AS TituloOcorrencia 
+           FROM   nao_conformidade 
+        ";
+
         private const string SELECT_NAO_CONFORMIDADES_POR_TIPO = @"
            SELECT prioridade_ocorrencia AS PrioridadeOcorrencia, 
                    Count(1) AS Quantidade 
@@ -59,6 +69,11 @@ namespace QualityManagement.Repository.Dominio
                 System.Data.DbType.String);
 
             Execute(INSERT_NAO_CONFORMIDADE, parametros);
+        }
+
+        public Task<IEnumerable<NaoConformidadeEntidade>> ObterRegistrosRecentes()
+        {
+            return ListAsync<NaoConformidadeEntidade>(SELECT_OBTER_REGISTROS_RECENTES);
         }
 
         public Task<IEnumerable<QuantidadeNaoConformidadePorTipoEntidade>> ObterDadoPorTipo()

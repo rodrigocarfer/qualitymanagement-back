@@ -29,6 +29,11 @@ namespace QualityManagement.Service.Dominio
         {
             RelatorioNaoConformidade relatorio = new RelatorioNaoConformidade();
 
+            Task taskRegistrosRecentes =
+                _naoConformidadeRepository.ObterRegistrosRecentes().ContinueWith(
+                    task => relatorio.RegistrosRecentes =
+                        _mapper.Map<IEnumerable<NaoConformidade>>(task.Result));
+
             Task taskDadoPorTipo = 
                 _naoConformidadeRepository.ObterDadoPorTipo().ContinueWith(
                     task => relatorio.QuantidadeNaoConformidadePorTipo =
@@ -45,7 +50,7 @@ namespace QualityManagement.Service.Dominio
                         _mapper.Map<IEnumerable<QuantidadeNaoConformidadePorDataEPrioridade>>(task.Result));
 
             return AsyncHelper.ResultadoAsync<RelatorioNaoConformidade>(relatorio,
-                taskDadoPorTipo, taskDadoPorPrioridade, taskDadoPorMesEPrioridade);
+                taskRegistrosRecentes, taskDadoPorTipo, taskDadoPorPrioridade, taskDadoPorMesEPrioridade);
         }
     }
 }
