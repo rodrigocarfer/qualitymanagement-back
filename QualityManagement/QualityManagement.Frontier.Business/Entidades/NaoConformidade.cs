@@ -8,6 +8,7 @@ namespace QualityManagement.Frontier.Business.Entidades
         public TipoOcorrencia TipoOcorrencia { get; set; }
         public PrioridadeOcorrencia PrioridadeOcorrencia { get; set; }
         public DateTime DataOcorrencia { get; set; }
+        public DateTime DataInclusao { get; set; }
         public string TituloOcorrencia { get; set; }
         public string DescricaoOcorrencia { get; set; }
     }

@@ -24,7 +24,8 @@ namespace QualityManagement.Repository.Dominio
         ";
 
         private const string SELECT_OBTER_REGISTROS_RECENTES = @"
-           SELECT TOP 10 data_inclusao         AS DataInclusao, 
+           SELECT TOP 10 
+              data_inclusao         AS DataInclusao, 
               data_ocorrencia       AS DataOcorrencia, 
               descricao_ocorrencia  AS DescricaoOcorrencia, 
               prioridade_ocorrencia AS PrioridadeOcorrencia, 
