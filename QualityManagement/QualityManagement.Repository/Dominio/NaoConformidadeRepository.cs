@@ -36,17 +36,17 @@ namespace QualityManagement.Repository.Dominio
         ";
 
         private const string SELECT_NAO_CONFORMIDADES_POR_TIPO = @"
-           SELECT prioridade_ocorrencia AS PrioridadeOcorrencia, 
-                   Count(1) AS Quantidade 
-           FROM   nao_conformidade 
-           GROUP  BY prioridade_ocorrencia 
-        ";
-
-        private const string SELECT_NAO_CONFORMIDADES_POR_PRIORIDADE = @"
            SELECT tipo_ocorrencia AS TipoOcorrencia, 
                    Count(1) AS Quantidade 
            FROM   nao_conformidade 
            GROUP  BY tipo_ocorrencia 
+        ";
+
+        private const string SELECT_NAO_CONFORMIDADES_POR_PRIORIDADE = @"
+            SELECT prioridade_ocorrencia AS PrioridadeOcorrencia, 
+                   Count(1) AS Quantidade 
+           FROM   nao_conformidade 
+           GROUP  BY prioridade_ocorrencia           
         ";
 
         private const string SELECT_NAO_CONFORMIDADES_POR_DATA_E_PRIORIDADE = @"
