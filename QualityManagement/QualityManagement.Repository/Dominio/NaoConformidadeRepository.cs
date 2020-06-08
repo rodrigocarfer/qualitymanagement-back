@@ -32,6 +32,7 @@ namespace QualityManagement.Repository.Dominio
               tipo_ocorrencia       AS TipoOcorrencia, 
               titulo_ocorrencia     AS TituloOcorrencia 
            FROM   nao_conformidade 
+           ORDER BY data_inclusao DESC
         ";
 
         private const string SELECT_NAO_CONFORMIDADES_POR_TIPO = @"
