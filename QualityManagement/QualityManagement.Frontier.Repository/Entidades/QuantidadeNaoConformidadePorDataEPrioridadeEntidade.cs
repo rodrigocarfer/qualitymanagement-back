@@ -5,8 +5,9 @@ namespace QualityManagement.Frontier.Repository.Entidades
 {
     public class QuantidadeNaoConformidadePorDataEPrioridadeEntidade
     {
-        public DateTime DataOcorrencia { get; set; }
-        public PrioridadeOcorrencia PrioridadeOcorrencia { get; set; }
-        public int Quantidade { get; set; }
+        public DateTime AnoMes { get; set; }
+        public int QuantidadeBaixa { get; set; }
+        public int QuantidadeMedia { get; set; }
+        public int QuantidadeAlta { get; set; }
     }
 }

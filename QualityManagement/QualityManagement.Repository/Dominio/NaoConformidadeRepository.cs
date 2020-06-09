@@ -50,11 +50,22 @@ namespace QualityManagement.Repository.Dominio
         ";
 
         private const string SELECT_NAO_CONFORMIDADES_POR_DATA_E_PRIORIDADE = @"
-           SELECT CONVERT(VARCHAR(7), data_ocorrencia, 126) AS DataOcorrencia, 
-                   prioridade_ocorrencia AS PrioridadeOcorrencia, 
-                   Count(1) AS Quantidade 
-           FROM   nao_conformidade 
-           GROUP  BY CONVERT(VARCHAR(7), data_ocorrencia, 126), prioridade_ocorrencia
+           SELECT AnoMes, 
+                   (SELECT Count(1) 
+                    FROM   nao_conformidade 
+                    WHERE  CONVERT(VARCHAR(7), data_ocorrencia, 126) = anomes 
+                           AND prioridade_ocorrencia = 0) QuantidadeBaixa, 
+                   (SELECT Count(1) 
+                    FROM   nao_conformidade 
+                    WHERE  CONVERT(VARCHAR(7), data_ocorrencia, 126) = anomes 
+                           AND prioridade_ocorrencia = 1) QuantidadeMedia, 
+                   (SELECT Count(1) 
+                    FROM   nao_conformidade 
+                    WHERE  CONVERT(VARCHAR(7), data_ocorrencia, 126) = anomes 
+                           AND prioridade_ocorrencia = 2) QuantidadeAlta 
+            FROM   (SELECT CONVERT(VARCHAR(7), data_ocorrencia, 126) AS AnoMes 
+                    FROM   nao_conformidade) dadosRelatorio 
+            GROUP  BY anomes 
         ";
 
         public void Registrar(NaoConformidadeEntidade naoConformidadeEntidade)
