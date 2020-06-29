@@ -21,6 +21,8 @@ namespace QualityManagement.API
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
+
             services.Configure<IISServerOptions>(options =>
             {
                 options.AutomaticAuthentication = false;
@@ -62,6 +64,8 @@ namespace QualityManagement.API
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
+            app.UseCors(options => { options.AllowAnyOrigin(); options.AllowAnyHeader(); });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
