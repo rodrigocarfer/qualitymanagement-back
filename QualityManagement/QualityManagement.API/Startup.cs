@@ -21,7 +21,7 @@ namespace QualityManagement.API
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors();
+            services.AddCors(options => options.AddDefaultPolicy(policy => policy.AllowAnyOrigin()));
 
             services.Configure<IISServerOptions>(options =>
             {
